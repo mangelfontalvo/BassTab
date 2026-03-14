@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
+<!DOCTYPE html><html lang="es">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -20,35 +19,12 @@
       --radius:18px;
     }
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:Arial,Helvetica,sans-serif;
-      background:linear-gradient(180deg,var(--bg),var(--bg2) 30%,#111827);
-      color:var(--txt);
-    }
-    header{
-      position:sticky;top:0;z-index:10;
-      background:rgba(2,6,23,.94);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid #1f2937;
-      padding:16px;
-    }
-    .brand{font-size:22px;font-weight:700}
-    .sub{font-size:13px;color:var(--muted);margin-top:4px}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:linear-gradient(180deg,var(--bg),var(--bg2) 30%,#111827);color:var(--txt)}
+    header{position:sticky;top:0;z-index:10;background:rgba(2,6,23,.94);backdrop-filter:blur(10px);border-bottom:1px solid #1f2937;padding:16px}
+    .brand{font-size:22px;font-weight:700}.sub{font-size:13px;color:var(--muted);margin-top:4px}
     .wrap{max-width:980px;margin:auto;padding:14px}
-    .panel{
-      background:rgba(17,24,39,.94);
-      border:1px solid #1f2937;
-      border-radius:var(--radius);
-      padding:14px;
-      margin-bottom:14px;
-      box-shadow:0 8px 30px rgba(0,0,0,.22);
-    }
-    .search{
-      width:100%;padding:14px 16px;border-radius:14px;
-      border:1px solid #334155;background:#0b1220;color:#fff;
-      font-size:16px;outline:none;
-    }
+    .panel{background:rgba(17,24,39,.94);border:1px solid #1f2937;border-radius:var(--radius);padding:14px;margin-bottom:14px;box-shadow:0 8px 30px rgba(0,0,0,.22)}
+    .search{width:100%;padding:14px 16px;border-radius:14px;border:1px solid #334155;background:#0b1220;color:#fff;font-size:16px;outline:none}
     .toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:10px}
     .small{font-size:13px;color:var(--muted)}
     .switch{display:flex;align-items:center;gap:8px;font-size:14px}
@@ -56,10 +32,7 @@
     .chip{border:none;background:#1f2937;color:#cbd5e1;padding:9px 12px;border-radius:999px;white-space:nowrap;cursor:pointer}
     .chip.active{background:var(--accent);color:#001018;font-weight:700}
     .grid{display:grid;gap:12px}
-    .card{
-      background:linear-gradient(180deg,#162031,#111827);
-      border:1px solid #223047;border-radius:var(--radius);padding:14px;
-    }
+    .card{background:linear-gradient(180deg,#162031,#111827);border:1px solid #223047;border-radius:var(--radius);padding:14px}
     .row{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
     .title{font-size:18px;font-weight:700;line-height:1.25}
     .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
@@ -67,42 +40,26 @@
     .pill.ok{background:#16351f;color:#bbf7d0}
     .pill.muted{background:#2b3441;color:#cbd5e1}
     .actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-    .btn,.icon-btn,.mini{
-      border:none;text-decoration:none;padding:11px 12px;border-radius:12px;
-      background:#243042;color:#fff;font-weight:700;font-size:14px;cursor:pointer;
-    }
-    .btn.primary{background:var(--primary);color:#04210f}
-    .btn.soft{background:#1f2937;color:#e2e8f0}
-    .icon-btn{min-width:42px;background:#1f2937}
-    .mini{padding:8px 10px}
-    .mini.danger{background:#3b1720}
-    pre{
-      background:#0b1220;border:1px solid #243042;padding:12px;border-radius:14px;
-      overflow:auto;font-size:13px;line-height:1.35;color:#dbeafe;
-      white-space:pre-wrap;
-    }
-    .set-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-    .set-buttons{display:flex;gap:8px;flex-wrap:wrap}
-    .set-item{
-      display:flex;justify-content:space-between;gap:10px;align-items:center;
-      background:#0b1220;border:1px solid #223047;padding:10px 12px;border-radius:14px;margin-top:10px
-    }
-    .set-item>div:first-child{display:flex;gap:10px;align-items:center}
-    .set-index{font-weight:700;color:#93c5fd}
-    .set-title{font-weight:700}
-    .set-actions{display:flex;gap:6px}
+    .btn,.icon-btn,.mini{border:none;text-decoration:none;padding:11px 12px;border-radius:12px;background:#243042;color:#fff;font-weight:700;font-size:14px;cursor:pointer}
+    .btn.primary{background:var(--primary);color:#04210f}.btn.soft{background:#1f2937;color:#e2e8f0}.icon-btn{min-width:42px;background:#1f2937}
+    .mini{padding:8px 10px}.mini.danger{background:#3b1720}
+    details{margin-top:12px;border:1px solid #243042;border-radius:14px;background:#0b1220;overflow:hidden}
+    summary{cursor:pointer;padding:12px 14px;font-weight:700;color:#dbeafe}
+    .tabbox{padding:0 14px 14px}
+    pre{background:#020817;border:1px solid #243042;padding:12px;border-radius:12px;overflow:auto;font-size:13px;line-height:1.35;color:#dbeafe;white-space:pre-wrap}
+    .section{margin:10px 0 6px;font-size:13px;color:#93c5fd;font-weight:700}
+    .set-head{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}.set-buttons{display:flex;gap:8px;flex-wrap:wrap}
+    .set-item{display:flex;justify-content:space-between;gap:10px;align-items:center;background:#0b1220;border:1px solid #223047;padding:10px 12px;border-radius:14px;margin-top:10px}
+    .set-item>div:first-child{display:flex;gap:10px;align-items:center}.set-index{font-weight:700;color:#93c5fd}.set-title{font-weight:700}.set-actions{display:flex;gap:6px}
     .empty{color:var(--muted);padding:10px 2px}
     .footer-note{padding:14px 18px 28px;color:var(--muted);font-size:12px;text-align:center}
-    .install-tip{margin-top:10px;padding:10px 12px;background:#0b1220;border:1px solid #243042;border-radius:12px;color:#cbd5e1;font-size:13px}
   </style>
 </head>
 <body>
   <header>
     <div class="brand">🎸 BassTab</div>
-    <div class="sub">52 canciones · tabs simplificadas · favoritas · setlist · tono y tempo</div>
-  </header>
-
-  <main class="wrap">
+    <div class="sub">52 canciones · guías de bajo por secciones · favoritas · setlist · tono y tempo</div>
+  </header>  <main class="wrap">
     <section class="panel">
       <input id="search" class="search" placeholder="Buscar canción, tono o categoría..." />
       <div class="toolbar">
@@ -110,181 +67,207 @@
         <label class="switch"><input id="onlyFav" type="checkbox" /> Solo favoritas</label>
       </div>
       <div id="chips" class="chips"></div>
-      <div class="install-tip">
-        Después de publicarla en GitHub Pages, ábrela en Chrome y usa <b>Agregar a pantalla de inicio</b>.
-      </div>
-    </section>
-
-    <section class="panel">
-      <div class="set-head">
-        <div>
-          <div class="brand" style="font-size:18px">📝 Setlist</div>
-          <div class="small">Agrega canciones desde las tarjetas y ordénalas aquí.</div>
-        </div>
-        <div class="set-buttons">
-          <button id="copySetlist" class="btn soft">Copiar</button>
-          <button id="exportSetlist" class="btn soft">Exportar</button>
-          <button id="clearSetlist" class="btn soft">Vaciar</button>
-        </div>
-      </div>
-      <div id="setlist"></div>
-    </section>
-
-    <section id="tabs" class="grid"></section>
-  </main>
-
-  <div class="footer-note">
-    Las líneas de bajo son guías simplificadas y editables para tocar en iglesia. No son transcripciones oficiales exactas.
+    </section><section class="panel">
+  <div class="set-head">
+    <div>
+      <div class="brand" style="font-size:18px">📝 Setlist</div>
+      <div class="small">Agrega canciones desde las tarjetas y ordénalas aquí.</div>
+    </div>
+    <div class="set-buttons">
+      <button id="copySetlist" class="btn soft">Copiar</button>
+      <button id="exportSetlist" class="btn soft">Exportar</button>
+      <button id="clearSetlist" class="btn soft">Vaciar</button>
+    </div>
   </div>
+  <div id="setlist"></div>
+</section>
 
-<script>
+<section id="tabs" class="grid"></section>
+
+  </main>  <div class="footer-note">
+    Esta versión usa guías de bajo más completas por secciones (intro, verso y coro), pero siguen siendo arreglos simplificados para iglesia y no transcripciones oficiales exactas.
+  </div><script>
 const SONGS = [
-  {title:"La bondad de Dios",category:"Adoración",key:"G",tempo:"72",progression:"1 - 5 - 6m - 4",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|10-------10-----|15-------15-----|7--------7------|13-------13-----|`},
-  {title:"Con mi Dios",category:"Alabanza",key:"D",tempo:"132",progression:"1 - 5 - 6m - 4",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|5--------5------|10-------10-----|2--------2------|8--------8------|`},
-  {title:"Hosanna",category:"Adoración",key:"E",tempo:"74",progression:"1 - 5/7 - 6m - 4",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|7--------7------|12-------12-----|4--------4------|10-------10-----|`},
-  {title:"Lo único que quiero",category:"Adoración",key:"D",tempo:"70",progression:"6m - 4 - 1 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|2--------2------|8--------8------|5--------5------|10-------10-----|`},
-  {title:"Creo en ti",category:"Adoración",key:"A",tempo:"76",progression:"1 - 5 - 6m - 4",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|12-------12-----|17-------17-----|9--------9------|15-------15-----|`},
-  {title:"Eres todopoderoso",category:"Alabanza",key:"G",tempo:"128",progression:"1 - 4 - 1 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|10-------10-----|13-------13-----|10-------10-----|15-------15-----|`},
-  {title:"Eres fiel",category:"Alabanza",key:"D",tempo:"124",progression:"1 - 5 - 4 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|5--------5------|10-------10-----|8--------8------|10-------10-----|`},
-  {title:"Hijo de Dios",category:"Adoración",key:"C",tempo:"68",progression:"1 - 6m - 4 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|3--------3------|0--------0------|6--------6------|8--------8------|
-E|----------------|----------------|----------------|----------------|`},
-  {title:"Canta al Señor",category:"Adoración",key:"G",tempo:"72",progression:"1 - 5 - 6m - 4",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|10-------10-----|15-------15-----|7--------7------|13-------13-----|`},
-  {title:"Fiesta en el desierto",category:"Alabanza",key:"A",tempo:"136",progression:"1 - b7 - 4 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|12-------12-----|20-------20-----|15-------15-----|17-------17-----|`},
-  {title:"Que se llene tu casa",category:"Alabanza",key:"G",tempo:"118",progression:"1 - 5 - 6m - 4",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|10-------10-----|15-------15-----|7--------7------|13-------13-----|`},
-  {title:"Coritos",category:"Especial",key:"C",tempo:"110",progression:"1 - 4 - 5 - 1",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|3--------3------|6--------6------|8--------8------|3--------3------|
-E|----------------|----------------|----------------|----------------|`},
-  {title:"Quiero conocer a Jesús (Yeshua)",category:"Adoración",key:"E",tempo:"72",progression:"1 - 5 - 6m - 4",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|7--------7------|12-------12-----|4--------4------|10-------10-----|`},
-  {title:"Jesucristo basta",category:"Adoración",key:"D",tempo:"74",progression:"6m - 4 - 1 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|2--------2------|8--------8------|5--------5------|10-------10-----|`},
-  {title:"Todo lo has cambiado",category:"Adoración",key:"G",tempo:"76",progression:"1 - 5 - 6m - 4",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|10-------10-----|15-------15-----|7--------7------|13-------13-----|`},
-  {title:"Dios incomparable",category:"Alabanza",key:"A",tempo:"128",progression:"1 - 5 - 6m - 4",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|12-------12-----|17-------17-----|9--------9------|15-------15-----|`},
-  {title:"Goliat",category:"Guerra espiritual",key:"B",tempo:"138",progression:"1 - b7 - 4 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|14-------14-----|22-------22-----|17-------17-----|19-------19-----|`},
-  {title:"Me llamaste a conquistar",category:"Alabanza",key:"G",tempo:"132",progression:"1 - 4 - 1 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|10-------10-----|13-------13-----|10-------10-----|15-------15-----|`},
-  {title:"Somos cristianos",category:"Alabanza",key:"C",tempo:"118",progression:"1 - 4 - 5 - 1",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|3--------3------|6--------6------|8--------8------|3--------3------|
-E|----------------|----------------|----------------|----------------|`},
-  {title:"Que se abra el cielo",category:"Adoración",key:"D",tempo:"72",progression:"1 - 5 - 6m - 4",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|5--------5------|10-------10-----|2--------2------|8--------8------|`},
-  {title:"Perfume a tus pies",category:"Adoración",key:"E",tempo:"68",progression:"6m - 4 - 1 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|4--------4------|10-------10-----|7--------7------|12-------12-----|`},
-  {title:"El volverá",category:"Esperanza",key:"G",tempo:"88",progression:"1 - 4 - 1 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|10-------10-----|13-------13-----|10-------10-----|15-------15-----|`},
-  {title:"Dile a ese gigante",category:"Guerra espiritual",key:"A",tempo:"134",progression:"1 - b7 - 4 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|12-------12-----|20-------20-----|15-------15-----|17-------17-----|`},
-  {title:"En los montes y en los valles",category:"Adoración",key:"G",tempo:"72",progression:"1 - 5 - 6m - 4",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|10-------10-----|15-------15-----|7--------7------|13-------13-----|`},
-  {title:"Digno",category:"Adoración",key:"D",tempo:"74",progression:"1 - 5 - 6m - 4",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|5--------5------|10-------10-----|2--------2------|8--------8------|`},
-  {title:"De los montes a los valles",category:"Adoración",key:"G",tempo:"72",progression:"1 - 5 - 6m - 4",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|10-------10-----|15-------15-----|7--------7------|13-------13-----|`},
-  {title:"Explícame tanto amor",category:"Adoración",key:"C",tempo:"70",progression:"6m - 4 - 1 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|0--------0------|6--------6------|3--------3------|8--------8------|
-E|----------------|----------------|----------------|----------------|`},
-  {title:"El poder de tu amor",category:"Adoración",key:"G",tempo:"70",progression:"1 - 5 - 6m - 4",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|10-------10-----|15-------15-----|7--------7------|13-------13-----|`},
-  {title:"Sobrenatural",category:"Alabanza",key:"A",tempo:"126",progression:"1 - 5 - 4 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|12-------12-----|17-------17-----|15-------15-----|17-------17-----|`},
-  {title:"Abre mis ojos",category:"Adoración",key:"D",tempo:"68",progression:"1 - 6m - 4 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|5--------5------|2--------2------|8--------8------|10-------10-----|`},
-  {title:"Tu mirada",category:"Adoración",key:"E",tempo:"72",progression:"6m - 4 - 1 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|4--------4------|10-------10-----|7--------7------|12-------12-----|`},
-  {title:"Vivo enamorado",category:"Alabanza",key:"G",tempo:"124",progression:"1 - 4 - 1 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|10-------10-----|13-------13-----|10-------10-----|15-------15-----|`},
-  {title:"Te alabaré mi buen Jesús",category:"Alabanza",key:"C",tempo:"122",progression:"1 - 5 - 4 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|3--------3------|8--------8------|6--------6------|8--------8------|
-E|----------------|----------------|----------------|----------------|`},
-  {title:"Bueno es alabar",category:"Alabanza",key:"G",tempo:"126",progression:"1 - 4 - 5 - 1",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|10-------10-----|13-------13-----|15-------15-----|10-------10-----|`},
-  {title:"Cambiaré mi tristeza",category:"Alabanza",key:"G",tempo:"120",progression:"1 - 4 - 5 - 1",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|10-------10-----|13-------13-----|15-------15-----|10-------10-----|`},
-  {title:"Al que me ciñe",category:"Alabanza",key:"A",tempo:"128",progression:"1 - 5 - 4 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|12-------12-----|17-------17-----|15-------15-----|17-------17-----|`},
-  {title:"La casa de Dios",category:"Alabanza",key:"G",tempo:"122",progression:"1 - 4 - 1 - 5",tab:`G|----------------|----------------|----------------|----------------|
-D|----------------|----------------|----------------|----------------|
-A|----------------|----------------|----------------|----------------|
-E|10-------10-----|13-------13-----|10-------10-----|15-------15-----|`},
-  {title:"Levanto mis manos",category:"Adoración",
+  {title:'La bondad de Dios',category:'Adoración',key:'G',tempo:'72',prog:'G - D - Em - C'},
+  {title:'Con mi Dios',category:'Alabanza',key:'D',tempo:'132',prog:'D - A - Bm - G'},
+  {title:'Hosanna',category:'Adoración',key:'E',tempo:'74',prog:'E - B - C#m - A'},
+  {title:'Lo único que quiero',category:'Adoración',key:'D',tempo:'70',prog:'Bm - G - D - A'},
+  {title:'Creo en ti',category:'Adoración',key:'A',tempo:'76',prog:'A - E - F#m - D'},
+  {title:'Eres todopoderoso',category:'Alabanza',key:'G',tempo:'128',prog:'G - C - G - D'},
+  {title:'Eres fiel',category:'Alabanza',key:'D',tempo:'124',prog:'D - A - G - A'},
+  {title:'Hijo de Dios',category:'Adoración',key:'C',tempo:'68',prog:'C - Am - F - G'},
+  {title:'Canta al Señor',category:'Adoración',key:'G',tempo:'72',prog:'G - D - Em - C'},
+  {title:'Fiesta en el desierto',category:'Alabanza',key:'A',tempo:'136',prog:'A - G - D - E'},
+  {title:'Que se llene tu casa',category:'Alabanza',key:'G',tempo:'118',prog:'G - D - Em - C'},
+  {title:'Coritos',category:'Especial',key:'C',tempo:'110',prog:'C - F - G - C'},
+  {title:'Quiero conocer a Jesús (Yeshua)',category:'Adoración',key:'E',tempo:'72',prog:'E - B - C#m - A'},
+  {title:'Jesucristo basta',category:'Adoración',key:'D',tempo:'74',prog:'Bm - G - D - A'},
+  {title:'Todo lo has cambiado',category:'Adoración',key:'G',tempo:'76',prog:'G - D - Em - C'},
+  {title:'Dios incomparable',category:'Alabanza',key:'A',tempo:'128',prog:'A - E - F#m - D'},
+  {title:'Goliat',category:'Guerra espiritual',key:'B',tempo:'138',prog:'B - A - E - F#'},
+  {title:'Me llamaste a conquistar',category:'Alabanza',key:'G',tempo:'132',prog:'G - C - G - D'},
+  {title:'Somos cristianos',category:'Alabanza',key:'C',tempo:'118',prog:'C - F - G - C'},
+  {title:'Que se abra el cielo',category:'Adoración',key:'D',tempo:'72',prog:'D - A - Bm - G'},
+  {title:'Perfume a tus pies',category:'Adoración',key:'E',tempo:'68',prog:'C#m - A - E - B'},
+  {title:'El volverá',category:'Esperanza',key:'G',tempo:'88',prog:'G - C - G - D'},
+  {title:'Dile a ese gigante',category:'Guerra espiritual',key:'A',tempo:'134',prog:'A - G - D - E'},
+  {title:'En los montes y en los valles',category:'Adoración',key:'G',tempo:'72',prog:'G - D - Em - C'},
+  {title:'Digno',category:'Adoración',key:'D',tempo:'74',prog:'D - A - Bm - G'},
+  {title:'De los montes a los valles',category:'Adoración',key:'G',tempo:'72',prog:'G - D - Em - C'},
+  {title:'Explícame tanto amor',category:'Adoración',key:'C',tempo:'70',prog:'Am - F - C - G'},
+  {title:'El poder de tu amor',category:'Adoración',key:'G',tempo:'70',prog:'G - D - Em - C'},
+  {title:'Sobrenatural',category:'Alabanza',key:'A',tempo:'126',prog:'A - E - D - E'},
+  {title:'Abre mis ojos',category:'Adoración',key:'D',tempo:'68',prog:'D - Bm - G - A'},
+  {title:'Tu mirada',category:'Adoración',key:'E',tempo:'72',prog:'C#m - A - E - B'},
+  {title:'Vivo enamorado',category:'Alabanza',key:'G',tempo:'124',prog:'G - C - G - D'},
+  {title:'Te alabaré mi buen Jesús',category:'Alabanza',key:'C',tempo:'122',prog:'C - G - F - G'},
+  {title:'Bueno es alabar',category:'Alabanza',key:'G',tempo:'126',prog:'G - C - D - G'},
+  {title:'Cambiaré mi tristeza',category:'Alabanza',key:'G',tempo:'120',prog:'G - C - D - G'},
+  {title:'Al que me ciñe',category:'Alabanza',key:'A',tempo:'128',prog:'A - E - D - E'},
+  {title:'La casa de Dios',category:'Alabanza',key:'G',tempo:'122',prog:'G - C - G - D'},
+  {title:'Levanto mis manos',category:'Adoración',key:'D',tempo:'72',prog:'D - A - Bm - G'},
+  {title:'Tú harás',category:'Fe',key:'G',tempo:'78',prog:'G - D - Em - C'},
+  {title:'En el trono está',category:'Adoración',key:'C',tempo:'74',prog:'C - Am - F - G'},
+  {title:'Con mis manos levantadas',category:'Adoración',key:'G',tempo:'72',prog:'G - D - Em - C'},
+  {title:'No hay lugar más alto',category:'Adoración',key:'D',tempo:'70',prog:'D - A - Bm - G'},
+  {title:'Tu fidelidad',category:'Adoración',key:'G',tempo:'68',prog:'G - C - G - D'},
+  {title:'Amigo de Dios',category:'Alabanza',key:'G',tempo:'118',prog:'G - C - D - G'},
+  {title:'Eres mi amigo fiel',category:'Adoración',key:'D',tempo:'72',prog:'D - A - Bm - G'},
+  {title:'Revelación',category:'Alabanza',key:'A',tempo:'126',prog:'A - E - D - E'},
+  {title:'Al campo enemigo',category:'Guerra espiritual',key:'A',tempo:'136',prog:'A - G - D - E'},
+  {title:'Vida nueva',category:'Alabanza',key:'G',tempo:'124',prog:'G - C - G - D'},
+  {title:'En el nombre de Jesús',category:'Guerra espiritual',key:'B',tempo:'132',prog:'B - A - E - F#'},
+  {title:'Alaba a Dios',category:'Alabanza',key:'C',tempo:'122',prog:'C - F - G - C'},
+  {title:'Gozo pegajoso',category:'Alabanza',key:'A',tempo:'130',prog:'A - D - E - A'},
+  {title:'Como dijiste',category:'Adoración',key:'E',tempo:'70',prog:'E - B - C#m - A'}
+];
+
+const NOTE_MAP = {
+  'C':{string:'A', fret:3}, 'Cm':{string:'A', fret:3},
+  'C#':{string:'A', fret:4}, 'C#m':{string:'A', fret:4}, 'Db':{string:'A', fret:4}, 'Dbm':{string:'A', fret:4},
+  'D':{string:'A', fret:5}, 'Dm':{string:'A', fret:5},
+  'D#':{string:'A', fret:6}, 'D#m':{string:'A', fret:6}, 'Eb':{string:'A', fret:6}, 'Ebm':{string:'A', fret:6},
+  'E':{string:'A', fret:7}, 'Em':{string:'A', fret:7},
+  'F':{string:'A', fret:8}, 'Fm':{string:'A', fret:8},
+  'F#':{string:'A', fret:9}, 'F#m':{string:'A', fret:9}, 'Gb':{string:'A', fret:9}, 'Gbm':{string:'A', fret:9},
+  'G':{string:'A', fret:10}, 'Gm':{string:'A', fret:10},
+  'G#':{string:'A', fret:11}, 'G#m':{string:'A', fret:11}, 'Ab':{string:'A', fret:11}, 'Abm':{string:'A', fret:11},
+  'A':{string:'E', fret:5}, 'Am':{string:'E', fret:5},
+  'A#':{string:'E', fret:6}, 'A#m':{string:'E', fret:6}, 'Bb':{string:'E', fret:6}, 'Bbm':{string:'E', fret:6},
+  'B':{string:'E', fret:7}, 'Bm':{string:'E', fret:7}
+};
+
+function cleanChord(ch){ return ch.replace(/\s+/g,'').replace(/maj7|sus4|sus2|add9|7/g,''); }
+function buildLine(chord, pattern){
+  const c = NOTE_MAP[cleanChord(chord)] || {string:'E', fret:3};
+  const root = c.fret;
+  const fifth = root + 2;
+  const octave = root + 5;
+  const lines = {G:'----------------', D:'----------------', A:'----------------', E:'----------------'};
+  const seq = pattern === 'verse' ? `${root}---${fifth}---${root}---${octave}` : pattern === 'chorus' ? `${root}-${root}-${fifth}-${octave}-${root}-${fifth}` : `${root}-------${root}---${fifth}`;
+  lines[c.string] = seq;
+  return `G|${lines.G}|\nD|${lines.D}|\nA|${lines.A}|\nE|${lines.E}|`;
+}
+function buildSection(prog, pattern){
+  return prog.split('-').map(s => s.trim()).map(ch => buildLine(ch, pattern)).join('\n\n');
+}
+function withTabs(song){
+  return {
+    ...song,
+    introTab: buildSection(song.prog, 'intro'),
+    verseTab: buildSection(song.prog, 'verse'),
+    chorusTab: buildSection(song.prog, 'chorus')
+  };
+}
+const FULL_SONGS = SONGS.map(withTabs);
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const state = {
+  songs: FULL_SONGS,
+  filter: '',
+  category: 'Todas',
+  onlyFavorites: false,
+  setlist: JSON.parse(localStorage.getItem('setlist') || '[]'),
+  favorites: JSON.parse(localStorage.getItem('favorites') || '[]')
+};
+
+function save(){
+  localStorage.setItem('setlist', JSON.stringify(state.setlist));
+  localStorage.setItem('favorites', JSON.stringify(state.favorites));
+}
+function isFav(t){ return state.favorites.includes(t); }
+function toggleFav(t){
+  if(isFav(t)) state.favorites = state.favorites.filter(x => x !== t);
+  else state.favorites.push(t);
+  save(); render();
+}
+function inSetlist(t){ return state.setlist.includes(t); }
+function toggleSetlist(t){
+  if(inSetlist(t)) state.setlist = state.setlist.filter(x => x !== t);
+  else state.setlist.push(t);
+  save(); render();
+}
+function moveSetlist(i, dir){
+  const j = i + dir;
+  if(j < 0 || j >= state.setlist.length) return;
+  [state.setlist[i], state.setlist[j]] = [state.setlist[j], state.setlist[i]];
+  save(); render();
+}
+function clearSetlist(){ state.setlist = []; save(); render(); }
+function exportSetlist(){
+  const text = state.setlist.map((s,i) => `${i+1}. ${s}`).join('\n');
+  const blob = new Blob([text || 'Setlist vacío'], {type:'text/plain;charset=utf-8'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'setlist_alabanza.txt';
+  a.click();
+}
+function copySetlist(){
+  const text = state.setlist.map((s,i) => `${i+1}. ${s}`).join('\n');
+  navigator.clipboard.writeText(text || 'Setlist vacío');
+  alert('Setlist copiado');
+}
+function categories(){ return ['Todas', ...new Set(FULL_SONGS.map(s => s.category))]; }
+function passFilter(song){
+  const text = (song.title + ' ' + song.category + ' ' + song.key + ' ' + song.tempo).toLowerCase();
+  const okText = text.includes(state.filter.toLowerCase());
+  const okCat = state.category === 'Todas' || song.category === state.category;
+  const okFav = !state.onlyFavorites || isFav(song.title);
+  return okText && okCat && okFav;
+}
+function songCard(song){
+  return `
+    <article class="card">
+      <div class="row">
+        <div>
+          <div class="title">${song.title}</div>
+          <div class="meta">
+            <span class="pill">${song.category}</span>
+            <span class="pill ok">Tono ${song.key}</span>
+            <span class="pill muted">${song.tempo} BPM</span>
+          </div>
+        </div>
+        <button class="icon-btn" onclick='toggleFav(${JSON.stringify(song.title)})'>${isFav(song.title) ? '★' : '☆'}</button>
+      </div>
+      <div class="small" style="margin-top:10px">Progresión sugerida: ${song.prog}</div>
+      <details>
+        <summary>Ver guía de bajo</summary>
+        <div class="tabbox">
+          <div class="section">Intro</div>
+          <pre>${song.introTab}</pre><div class="section">Verso</div>
+      <pre>${song.verseTab}</pre>
+      <div class="section">Coro</div>
+      <pre>${song.chorusTab}</pre>
+    </div>
+  </details>
+  <div class="actions">
+    <button class="btn primary" onclick='toggleSetlist(${JSON.stringify(song.title)})'>${inSetlist(song.title) ? 'Quitar de setlist' : 'Agregar a setlist'}</button>
+    <button class="btn soft" onclick='shareSong(${JSON.stringify(song.title)})'>Compartir</button>
+  </div>
+</article>`;
+
+} async function shareSong(title){ const song = FULL_SONGS.find(s => s.title === title); const txt = ${song.title}\nTono: ${song.key}\nTempo: ${song.tempo} BPM\nProgresión: ${song.prog}; if(navigator.share){ try{ await navigator.share({title, text:txt}); }catch(e){} } else { navigator.clipboard.writeText(txt); alert('Resumen copiado'); } } function renderSetlist(){ const box = $('#setlist'); if(!state.setlist.length){ box.innerHTML = '<div class="empty">Todavía no has agregado canciones al setlist.</div>'; return; } box.innerHTML = state.setlist.map((title,i) =>  <div class="set-item"> <div><div class="set-index">${i+1}.</div><div class="set-title">${title}</div></div> <div class="set-actions"> <button class="mini" onclick="moveSetlist(${i},-1)">↑</button> <button class="mini" onclick="moveSetlist(${i},1)">↓</button> <button class="mini danger" onclick='toggleSetlist(${JSON.stringify(title)})'>✕</button> </div> </div>).join(''); } function render(){ const visible = state.songs.filter(passFilter); $('#count').textContent = ${visible.length} canciones; $('#tabs').innerHTML = visible.map(songCard).join(''); renderSetlist(); $$('.chip').forEach(btn => btn.classList.toggle('active', btn.dataset.cat === state.category)); $('#onlyFav').checked = state.onlyFavorites; } function initCategories(){ $('#chips').innerHTML = categories().map(cat => <button class="chip" data-cat="${cat}" onclick="state.category='${cat}'; render()">${cat}</button>).join(''); } window.addEventListener('DOMContentLoaded', () => { initCategories(); $('#search').addEventListener('input', e => { state.filter = e.target.value; render(); }); $('#onlyFav').addEventListener('change', e => { state.onlyFavorites = e.target.checked; render(); }); $('#clearSetlist').addEventListener('click', clearSetlist); $('#exportSetlist').addEventListener('click', exportSetlist); $('#copySetlist').addEventListener('click', copySetlist); render(); }); </script>
+
+</body>
+</html>
