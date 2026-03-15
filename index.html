@@ -85,11 +85,11 @@
     .modal-sub{font-size:12px;color:var(--muted);margin-top:4px}
     .modal-actions{display:flex;gap:8px;flex-wrap:wrap}
     .close-btn{border:none;background:#1f2937;color:#fff;border-radius:12px;padding:10px 12px;font-weight:700;cursor:pointer}
-    .gp-status{padding:10px 16px;font-size:13px;color:#cbd5e1;border-bottom:1px solid #243042;background:#0f172a}
-    .gp-stage{flex:1 1 auto;overflow:hidden;position:relative;background:#0b1220}
+    .xml-status{padding:10px 16px;font-size:13px;color:#cbd5e1;border-bottom:1px solid #243042;background:#0f172a}
+    .xml-stage{flex:1 1 auto;overflow:hidden;position:relative;background:#0b1220}
     #alphaTabWrap{position:absolute;inset:0;display:flex;flex-direction:column}
     #alphaTabSurface{flex:1 1 auto;overflow:auto;background:#ffffff}
-    .gp-help{font-size:12px;color:var(--muted);padding:10px 16px;border-top:1px solid #243042;background:#111827}
+    .xml-help{font-size:12px;color:var(--muted);padding:10px 16px;border-top:1px solid #243042;background:#111827}
 
     @media (max-width:640px){
       .row,.set-head,.toolbar{align-items:stretch}
@@ -147,25 +147,25 @@
   </main>
 
 
-  <div id="gpModal" class="modal-backdrop hidden" aria-hidden="true">
-    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="gpTitle">
+  <div id="xmlModal" class="modal-backdrop hidden" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="xmlTitle">
       <div class="modal-header">
         <div>
-          <div id="gpTitle" class="modal-title">Visor Guitar Pro</div>
-          <div id="gpSubtitle" class="modal-sub">Carga archivos desde la carpeta <code>gp/</code>.</div>
+          <div id="xmlTitle" class="modal-title">Visor MusicXML</div>
+          <div id="xmlSubtitle" class="modal-sub">Carga archivos desde la carpeta <code>musicxml/</code>.</div>
         </div>
         <div class="modal-actions">
-          <a id="gpDownloadLink" class="btn soft hidden" target="_blank" rel="noopener">Abrir archivo</a>
-          <button id="gpClose" class="close-btn">Cerrar</button>
+          <a id="xmlDownloadLink" class="btn soft hidden" target="_blank" rel="noopener">Abrir XML</a>
+          <button id="xmlClose" class="close-btn">Cerrar</button>
         </div>
       </div>
-      <div id="gpStatus" class="gp-status">Preparando visor…</div>
-      <div class="gp-stage">
+      <div id="xmlStatus" class="gp-status">Preparando visor…</div>
+      <div class="xml-stage">
         <div id="alphaTabWrap">
           <div id="alphaTabSurface"></div>
         </div>
       </div>
-      <div class="gp-help">Sube tus archivos <code>.gp</code> a la carpeta <code>gp/</code> y crea <code>gp/manifest_gp.json</code> para relacionar cada canción con su archivo.</div>
+      <div class="xml-help">Sube tus archivos <code>.xml</code> a la carpeta <code>musicxml/</code> y crea <code>musicxml/manifest_musicxml.json</code> para relacionar cada canción con su archivo.</div>
     </div>
   </div>
 
@@ -258,9 +258,9 @@
     };
 
     let deferredPrompt = null;
-    let gpManifest = null;
-    let gpManifestLoaded = false;
-    let gpApi = null;
+    let xmlManifest = null;
+    let xmlManifestLoaded = false;
+    let xmlApi = null;
 
     function cleanChord(ch){
       return ch.replace(/\s+/g,'').replace(/maj7|sus4|sus2|add9|7/g,'');
@@ -395,7 +395,7 @@
           <div class="actions">
             <button class="btn primary" onclick='toggleSetlist(${JSON.stringify(song.title)})'>${inSetlist(song.title) ? 'Quitar de setlist' : 'Agregar a setlist'}</button>
             <button class="btn soft" onclick='shareSong(${JSON.stringify(song.title)})'>Compartir</button>
-            <button class="btn soft" onclick='openGpViewer(${JSON.stringify(song.title)})'>Ver GP</button>
+            <button class="btn soft" onclick='openXmlViewer(${JSON.stringify(song.title)})'>Ver MusicXML</button>
           </div>
         </article>
       `;
@@ -471,40 +471,40 @@
       state.letter = 'Todas';
       state.onlyFavorites = false;
       $('#search').value = '';
-      loadGpManifest();
-      render();
+      loadXmlManifest();
+        render();
       window.scrollTo({top: 0, behavior: 'smooth'});
     }
 
 
-    async function loadGpManifest(){
-      if(gpManifestLoaded) return gpManifest;
-      gpManifestLoaded = true;
+    async function loadXmlManifest(){
+      if(xmlManifestLoaded) return xmlManifest;
+      xmlManifestLoaded = true;
       try{
-        const response = await fetch('gp/manifest_gp.json', {cache:'no-store'});
-        if(!response.ok) throw new Error('No se encontró gp/manifest_gp.json');
-        gpManifest = await response.json();
+        const response = await fetch('musicxml/manifest_musicxml.json', {cache:'no-store'});
+        if(!response.ok) throw new Error('No se encontró musicxml/manifest_musicxml.json');
+        xmlManifest = await response.json();
       }catch(error){
-        gpManifest = null;
+        xmlManifest = null;
       }
-      return gpManifest;
+      return xmlManifest;
     }
 
-    function gpPathForSong(title){
-      if(!gpManifest || !title) return null;
-      const direct = gpManifest[title];
-      if(direct) return `gp/${direct}`;
+    function xmlPathForSong(title){
+      if(!xmlManifest || !title) return null;
+      const direct = xmlManifest[title];
+      if(direct) return `musicxml/${direct}`;
       const slug = slugify(title);
-      for(const [songTitle, fileName] of Object.entries(gpManifest)){
-        if(slugify(songTitle) === slug) return `gp/${fileName}`;
+      for(const [songTitle, fileName] of Object.entries(xmlManifest)){
+        if(slugify(songTitle) === slug) return `musicxml/${fileName}`;
       }
       return null;
     }
 
-    function ensureGpApi(){
-      if(gpApi) return gpApi;
+    function ensureXmlApi(){
+      if(xmlApi) return xmlApi;
       const surface = document.getElementById('alphaTabSurface');
-      gpApi = new alphaTab.AlphaTabApi(surface, {
+      xmlApi = new alphaTab.AlphaTabApi(surface, {
         file: null,
         player: {
           enablePlayer: false,
@@ -519,54 +519,54 @@
           elements: alphaTab.NotationElement.Score | alphaTab.NotationElement.Tab
         }
       });
-      return gpApi;
+      return xmlApi;
     }
 
-    function setGpStatus(message){
-      $('#gpStatus').textContent = message;
+    function setXmlStatus(message){
+      $('#xmlStatus').textContent = message;
     }
 
-    function openGpModal(title, path){
-      $('#gpTitle').textContent = title;
-      $('#gpSubtitle').innerHTML = `Archivo detectado: <code>${path}</code>`;
-      const link = $('#gpDownloadLink');
+    function openXmlModal(title, path){
+      $('#xmlTitle').textContent = title;
+      $('#xmlSubtitle').innerHTML = `Archivo detectado: <code>${path}</code>`;
+      const link = $('#xmlDownloadLink');
       link.href = path;
       link.classList.remove('hidden');
-      $('#gpModal').classList.remove('hidden');
-      $('#gpModal').setAttribute('aria-hidden','false');
+      $('#xmlModal').classList.remove('hidden');
+      $('#xmlModal').setAttribute('aria-hidden','false');
       document.body.style.overflow = 'hidden';
     }
 
-    function closeGpModal(){
-      $('#gpModal').classList.add('hidden');
-      $('#gpModal').setAttribute('aria-hidden','true');
+    function closeXmlModal(){
+      $('#xmlModal').classList.add('hidden');
+      $('#xmlModal').setAttribute('aria-hidden','true');
       document.body.style.overflow = '';
     }
 
-    async function openGpViewer(title){
-      setGpStatus('Buscando archivo Guitar Pro…');
-      openGpModal(title, 'gp/...');
-      await loadGpManifest();
-      const path = gpPathForSong(title);
+    async function openXmlViewer(title){
+      setXmlStatus('Buscando archivo MusicXML…');
+      openXmlModal(title, 'musicxml/...');
+      await loadXmlManifest();
+      const path = xmlPathForSong(title);
       if(!path){
-        $('#gpDownloadLink').classList.add('hidden');
-        $('#gpSubtitle').innerHTML = 'No se encontró relación en <code>gp/manifest_gp.json</code>.';
-        setGpStatus('No hay archivo GP asignado para esta canción. Debes agregarlo al manifest.');
+        $('#xmlDownloadLink').classList.add('hidden');
+        $('#xmlSubtitle').innerHTML = 'No se encontró relación en <code>musicxml/manifest_musicxml.json</code>.';
+        setXmlStatus('No hay archivo MusicXML asignado para esta canción. Debes agregarlo al manifest.');
         return;
       }
-      openGpModal(title, path);
-      setGpStatus('Cargando archivo GP…');
+      openXmlModal(title, path);
+      setXmlStatus('Cargando archivo MusicXML…');
       try{
-        const api = ensureGpApi();
-        api.renderStarted.on(() => setGpStatus('Renderizando partitura…'));
-        api.renderFinished.on(() => setGpStatus('Partitura lista. Puedes desplazarte dentro del visor.'));
+        const api = ensureXmlApi();
+        api.renderStarted.on(() => setXmlStatus('Renderizando partitura…'));
+        api.renderFinished.on(() => setXmlStatus('Partitura lista. Puedes desplazarte dentro del visor.'));
         api.error.on(error => {
-          setGpStatus('No se pudo abrir el archivo GP. Revisa el formato o la ruta.');
+          setXmlStatus('No se pudo abrir el archivo MusicXML. Revisa el formato o la ruta.');
           console.error(error);
         });
         api.load(path);
       }catch(error){
-        setGpStatus('No se pudo inicializar el visor alphaTab.');
+        setXmlStatus('No se pudo inicializar el visor de MusicXML.');
         console.error(error);
       }
     }
@@ -575,7 +575,7 @@
     window.toggleSetlist = toggleSetlist;
     window.moveSetlist = moveSetlist;
     window.shareSong = shareSong;
-    window.openGpViewer = openGpViewer;
+    window.openXmlViewer = openXmlViewer;
 
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
@@ -594,14 +594,14 @@
 
       $('#search').addEventListener('input', e => {
         state.filter = e.target.value;
-        loadGpManifest();
-      render();
+        loadXmlManifest();
+        render();
       });
 
       $('#onlyFav').addEventListener('change', e => {
         state.onlyFavorites = e.target.checked;
-        loadGpManifest();
-      render();
+        loadXmlManifest();
+        render();
       });
 
       $('#clearSetlist').addEventListener('click', clearSetlist);
@@ -609,9 +609,9 @@
       $('#copySetlist').addEventListener('click', copySetlist);
       $('#showAllSongs').addEventListener('click', resetFilters);
 
-      $('#gpClose').addEventListener('click', closeGpModal);
-      $('#gpModal').addEventListener('click', (e) => { if(e.target.id === 'gpModal') closeGpModal(); });
-      document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && !$('#gpModal').classList.contains('hidden')) closeGpModal(); });
+      $('#xmlClose').addEventListener('click', closeXmlModal);
+      $('#xmlModal').addEventListener('click', (e) => { if(e.target.id === 'xmlModal') closeXmlModal(); });
+      document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && !$('#xmlModal').classList.contains('hidden')) closeXmlModal(); });
 
       $('#installBtn').addEventListener('click', async () => {
         if(!deferredPrompt) {
@@ -624,8 +624,8 @@
         $('#installBtn').classList.add('hidden');
       });
 
-      loadGpManifest();
-      render();
+      loadXmlManifest();
+        render();
     });
   </script>
 </body>
